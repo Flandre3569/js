@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="抠图.png" alt="">
+    <button>停止定时器</button>
+    <script>
+        var img=document.querySelector('img');
+        function fn(){
+            img.style.display='none';
+        }
+
+        var time1=setTimeout(fn,5000);
+
+        var btn=document.querySelector('button');
+        btn.addEventListener('click',function(){
+            window.clearTimeout(time1);
+        })
+
+    </script>
+</body>
+</html>

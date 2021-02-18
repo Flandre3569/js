@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            width: 400px;
+            height: 300px;
+            position: relative;
+            left: 50%;
+            top: 300px;
+            margin-left: -200px;
+            background-color: pink;
+        }
+        .son {
+            position: absolute;
+            width: 200px;
+            height: 150px;
+            left: 50%;
+            top: 100px;
+            margin-left: -100px;
+            background-color:skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="father" style="text-align: center;">father
+        <div class="son">
+            son
+        </div>
+    </div>
+
+    <script>
+        var father =document.querySelector('.father');
+        var son =document.querySelector('.son');
+        father.addEventListener('click',function(e){
+            alert('father');
+        },false)
+        son.addEventListener('click',function(e){
+            alert('son');
+            e.stopPropagation();
+        },false)
+        document.addEventListener('click',function(e){
+            alert('document');
+        },false)
+    </script>
+
+</body>
+</html>

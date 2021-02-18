@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // var age=prompt('请输入你的年龄');
+        // var str='您今年的年龄为：'+age+'岁';
+        // alert(str);
+        console.log(typeof(str));//输入给控制台
+        var num=11;
+        var str2=num.toString();//强制类型转换的第一种方式
+        var str3=String(num);//强制类型转换的第二种方式
+        console.log(str2+str2);
+        console.log(str3+str3);
+
+        console.log(123&&456);
+        console.log(0&&123);
+        console.log(0||123);
+        console.log(!0&&123);
+        console.log(0&&123);
+        
+        var a=10;
+        var b=20;
+        function change(a,b){
+            var temp=a;
+            a=b;
+            b=temp;
+            console.log(a);
+            console.log(b);
+        }
+        change(a,b);
+
+        var a={
+            uname:"范明轩",
+            age:18,
+            habites:'打篮球',
+            sayHi:function(){
+                console.log('hi');
+            }
+        }
+
+        console.log(a.uname);
+        console.log(a.age);
+        a.sayHi();
+        
+    </script>
+</body>
+</html>

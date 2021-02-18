@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="pdf">制作Pdf</button>
+    <button id="caijian">自动裁剪</button>
+    <img src="E:\html\smallpdf.png" alt="">
+    <button id='anniu'>按钮</button>
+    <input type="text" name="" id="text" value="请点击我">
+    
+
+    <script>
+        //修改属性元素
+        var pdf=document.getElementById('pdf');
+        var caijian=document.getElementById('caijian');
+        var img=document.querySelector('img');
+
+        caijian.onclick=function(){
+            img.src='抠图.png';
+        }
+        pdf.onclick=function(){
+            img.src='smallpdf.png';
+        }
+
+        //修改表单元素
+        var button=document.getElementById('anniu');
+        var input=document.getElementById('text');
+        
+        button.onclick=function(){
+            input.value='我被点击了';
+            this.disabled=true;
+        }
+    </script>
+    
+</body>
+</html>

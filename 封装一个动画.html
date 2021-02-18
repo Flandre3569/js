@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        button {
+            margin-top:300px;
+        }
+    </style>
+</head>
+<body>
+   <div></div> 
+   <button>点击开启运动</button>
+   <script>
+       var div=document.querySelector('div');
+       var button=document.querySelector('button');
+       //封装函数
+    
+       function animate(obj,target){
+           //先清除一次定时器，防止点击按钮时重复调用
+            clearInterval(obj.timer);
+            obj.timer=setInterval(function() {
+                if(div.offsetLeft>=target){
+                    clearInterval(obj.timer);
+                }
+                obj.style.left=obj.offsetLeft+1+'px';
+            }, 30);
+        }
+        //调用函数直接可以实现动画
+        button.addEventListener('click',function(){
+            animate(div,300);
+        })
+   </script>
+</body>
+</html>

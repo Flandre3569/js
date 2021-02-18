@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="start">开始定时器</button>
+    <button class="stop">停止定时器</button>
+
+    <script>
+        var start=document.querySelector('.start');
+        var stop=document.querySelector('.stop');
+        var time1=null;
+
+        start.addEventListener('click',fn1);
+        function fn1(){
+            time1=window.setInterval(fn3,1000);
+        }
+        function fn3(){
+            console.log('倒计时开始');
+        }
+        
+        stop.addEventListener('click',function(){
+            window.clearInterval(time1);
+        })
+    </script>
+</body>
+</html>

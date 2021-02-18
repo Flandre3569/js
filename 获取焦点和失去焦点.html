@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            color: #999999;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" value="手机">
+    <!-- 1、获取事件 -->
+    <script>
+        var input=document.querySelector('input');
+        // 获得焦点事件 onfocus
+        input.onfocus=function(){
+            if(this.value==='手机'){
+                this.value='';
+            }
+            //在输入时将文字颜色显示为黑色
+            this.style.color='#333';
+        }
+
+        // 失去焦点事件 onblur
+        input.onblur=function(){
+            if(this.value===''){
+                this.value='手机';         
+            }
+            this.style.color='#999';
+        }
+    </script>
+</body>
+</html>

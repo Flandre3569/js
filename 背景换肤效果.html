@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: url(smallpdf.png) no-repeat center top;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .huanfu {
+            overflow:hidden;
+            margin: 100px auto;
+            background-color: #fff;
+            widows: 410px;
+            padding-top: 3px;
+        }
+        
+        .huanfu li {
+            float: left;
+            margin: 0 1px;
+            cursor: pointer;
+        }
+
+        .huanfu img {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="huanfu">
+        <li><img src="抠图.png" alt=""></li>
+        <li><img src="smallpdf.png" alt=""></li>
+    </ul>
+
+    <script>
+        var imags=document.querySelector('.huanfu').querySelectorAll('img');
+
+        for(var i = 0;i<imags.length;i++){
+            imags[i].onclick=function() {
+                document.body.style.backgroundImage='url('+this.src+')';
+            }
+        }
+    </script>
+</body>
+</html>

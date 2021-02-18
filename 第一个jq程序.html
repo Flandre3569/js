@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        .dahezi {
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+            position: relative;
+            top:300px;
+            left: 300px;
+        }
+        .hezi {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+            left: 50%;
+            margin-left: -50px;
+            top: 50%;
+            margin-top: -50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dahezi">
+        <div class="hezi"></div>
+        
+    </div>
+    <button id="panel1" class="btn">按钮1</button>
+    <button id='panel2'>按钮2</button>
+    <script crossorigin="anonymous" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" src="https://lib.baomitu.com/jquery/3.5.1/jquery.js"></script>
+
+    <script>
+        $(function(){
+            $('#panel1').on('click',function(){
+                $('.hezi').fadeToggle(200);
+        
+               
+            });
+            $('#panel2').on('mouseover',function(){
+                $('.dahezi .hezi').html('come on');
+            });
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #Hezi {
+            width: 100px;
+            height: 100px;
+            background-color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        {{ message }}
+        <br>
+       <span>
+           {{school.name}}
+       </span>
+       <ul>
+           <li> {{girlFriend[0] }} </li>
+           <li> {{girlFriend[1]}}</li>
+           <li>{{girlFriend[2]}}</li>
+       </ul>
+       <!-- Vue指令 -->
+       <h3 v-text="message"></h3>
+    </div>
+    <div id="Hezi"></div>
+    <input type="button" value="点击一下" v-on:click="fn"> 
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        var app=new Vue({
+            el:"#app",
+            data:{
+                message:"你好世界",
+                school :{
+                    name:"范明轩",
+                    age:20
+                },
+                girlFriend:["小红","小白","小蓝"],
+
+            }
+        })
+        var app2=new Vue({
+            el:"#Hezi",
+            data:{
+
+            }
+           
+        })
+      
+    </script>
+</body>
+</html>

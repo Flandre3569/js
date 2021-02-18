@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .slider-bar {
+            position: absolute;
+            left: 50%;
+            top: 300px;
+            margin-left: 600px;
+            width: 45px;
+            height: 130px;
+            background-color: pink;
+        }
+        
+        .w {
+            width: 1200px;
+            margin: 10px auto;
+        }
+        
+        .header {
+            height: 150px;
+            background-color: purple;
+        }
+        
+        .banner {
+            height: 250px;
+            background-color: skyblue;
+        }
+        
+        .main {
+            height: 1000px;
+            background-color: yellowgreen;
+        }
+        
+        span {
+            display: none;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider-bar">
+        <span class="goBack">返回顶部</span>
+    </div>
+    <div class="header w">头部区域</div>
+    <div class="banner w">banner区域</div>
+    <div class="main w">主体部分</div>
+    <script>
+        //1、获取元素
+        var slider=document.querySelector('.slider-bar');
+        var banner=document.querySelector('.banner');
+        var main=document.querySelector('.main');
+        var goBack=document.querySelector('.goBack');
+
+        var bannerTop=banner.offsetTop;
+        var sliderTop=slider.offsetTop-bannerTop;
+        var mainTop=main.offsetTop;
+        document.addEventListener('scroll',function(){
+            // console.log(window.pageYOffset);//获取header被卷曲掉的位置
+            if(window.pageYOffset>=bannerTop){
+                slider.style.position='fixed';//把侧边栏设置为固定定位，让其固定在页面的某个位置
+                slider.style.top=sliderTop+'px';//使侧边栏不会产生跳跃
+            }else{
+                slider.style.position='absolute';
+                slider.style.top=300+'px';
+            }
+
+            if(window.pageYOffset>=mainTop){
+                goBack.style.display='block';
+            }else{
+                goBack.style.display='none';
+            }
+        })
+    </script>
+</body>
+
+</html>

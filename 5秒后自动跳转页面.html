@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+    <script>
+        var divs=document.querySelector('div');
+        var timer=5;
+        var time1= setInterval(function(){
+            divs.innerHTML='您将在'+timer+'秒之后跳转到另一个页面';
+            timer--;
+            if(timer<=0){
+                window.location.href='https://www.bilibili.com/';
+                window.clearInterval(time1);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

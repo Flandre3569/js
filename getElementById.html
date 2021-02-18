@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="time">2020-11-20</div>
+    <ul id="ul">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        var timer=document.getElementById('time');
+        console.log(timer);
+        console.log(typeof timer)
+        console.dir(timer);
+
+        var lis=document.getElementsByTagName('li');
+        console.log(lis);
+
+        console.log(lis[0]);
+        //通过父元素获取子元素
+        var ul=document.getElementById('ul');
+        console.log(ul.getElementsByTagName('li'));
+
+        var bodyEle=document.body;
+        console.log(bodyEle);
+        console.dir(bodyEle);
+
+        var htmlEle=document.documentElement;
+        console.log((htmlEle));
+    </script>
+</body>
+</html>

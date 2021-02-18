@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sub,
+        .plus,
+        .time {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            border-style: solid;
+            border-color: black;
+        }
+        .time {
+            font-size: 80px;
+            text-align: center;
+            background-color: #fff;
+        }
+        .sub ,
+        .plus{
+            font-size: 60px;
+            text-align: center;
+            background-color: #666666;
+            cursor: pointer;
+        }
+        .plus {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        .sub {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="sub" @click="sub">-</div>
+        <div class="time">{{num}}</div>
+        <div class="plus" @click="plus">+</div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+    <script>
+        var app=new Vue({
+            el:"#app",
+            data:{
+                num:1
+            },
+            methods:{
+                plus:function(){
+                   if(this.num<10){
+                       this.num++;
+                   }else{
+                       alert('已达到最大值！');
+                   }
+                    
+                },
+                sub:function(){
+                    if(this.num>0){
+                        this.num--;
+                    }else{
+                        alert('已达到最小值！')
+                    }
+                },
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .time{
+            line-height: 20px;
+            background-color: pink;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- //1、事件是有事件源  事件类型  事件处理程序三部分组成
+    //事件源：事件被触发的对象
+    //事件类型：如何触发，什么时间，比如鼠标点击(onclick)
+    //事件处理程序：通过一个函数赋值的方式完成。 -->
+    <button id="btn">唐伯虎</button>
+    <div id="div">123</div>
+    <button id="time" >显示当前时间</button>
+    <div class="time" id="change">某个时间</div>
+    <script>
+        var btn =document.getElementById('btn');//获取事件源
+        //事件类型---onclick
+        btn.onclick=function(){//处理程序--function
+            alert('点秋香');
+        }
+    
+        var div=document.getElementById('div');
+        div.onclick=function(){
+            console.log('我被选中了');
+        }
+
+        //点击按钮显示当前时间事件
+        var date=new Date();
+        var time=document.getElementById('time');
+        var change=document.getElementById('change');
+        time.onclick=function(){
+            change.innerText=date;
+        }
+        
+        //将body中的所有元素显示在控制台上，并且能够识别html标签
+        var body=document.querySelector('body');
+        console.log(body.innerHTML);
+
+    </script>
+</body>
+</html>

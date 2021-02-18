@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        .button-500 {
+            margin-top:300px;
+        }
+        .button-800 {
+            margin-top:350px;
+        }
+    </style>
+</head>
+<body>
+   <div></div> 
+   <button class="button-500">点击开启运动到500</button>
+   <button class="button-800">点击开启运动到800</button>
+   <script>
+       var div=document.querySelector('div');
+       var button1=document.querySelector('.button-500');
+       var button2=document.querySelector('.button-800');
+       //封装函数
+       
+       function animate(obj,target,callback){
+           //先清除一次定时器，防止点击按钮时重复调用
+            clearInterval(obj.timer);
+            obj.timer=setInterval(function() {
+                var step=(target-obj.offsetLeft)/10; 
+                //js中出现小数会有误差，所以去除误差的方法就是向上取整
+                //两个是因为当往回走的时候也需要判断位置
+                step=step>0?Math.ceil(step):Math.floor(step);
+                if(div.offsetLeft==target){
+                    clearInterval(obj.timer);
+                    //设定一个回调函数判断，如果有回调函数，则执行回调函数
+                    if(callback){
+                        callback();
+                    }
+                }
+                obj.style.left=obj.offsetLeft+step+'px';
+            }, 15);
+        }
+        //调用函数直接可以实现动画
+        button1.addEventListener('click',function(){
+            animate(div,500);
+        })
+        button2.addEventListener('click',function(){
+            animate(div,800,function(){//设定回调函数
+                div.style.backgroundColor='red';
+            });
+        })
+   </script>
+</body>
+</html>

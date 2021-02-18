@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var num=prompt('请输入学生的数量');
+        var sum=0;
+        var aver=0;
+        for(var i=1;i<=num;i++){
+            var grades=prompt('请输入第'+i+'个学生的成绩');
+            sum=Number(sum)+Number(grades);
+        }
+        aver=Number(sum)/Number(num)*1.0;
+        alert('班里学生成绩总分为：'+sum+'\n'+'班级平均分为：'+aver);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

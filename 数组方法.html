@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr=[1,2,3];
+        //在数组后添加元素
+        console.log(arr.push(1,'好家伙'));
+        console.log(arr);
+        //在数组前添加元素
+        // console.log(arr.unshift('马保国'));
+        // console.log(arr);
+        
+        //删除数组元素
+        console.log(arr.pop());//删除数组最后的元素
+        console.log(arr.shift());//删除数组最前面的元素
+        //以上的返回值都是被删除的元素
+
+        console.log(arr);//输出删除后的数组。
+        
+        //数组翻转
+        var arr=['张飞','关羽','刘备'];
+        console.log(arr.reverse());
+
+        //冒泡排序
+        var arr1=[3,5,77,1,98];
+        arr1.sort(function(a,b){
+            return a-b;//升序排序
+           // return b-a;//降序排序
+        });
+        console.log(arr1);
+
+        //查找索引号
+        var arr=[1,2,3,3,4];
+        console.log(arr.indexOf(3));//从前面开始查找
+
+        console.log(arr.lastIndexOf(3));//从后面开始查找
+
+        //把数组中相同的元素去除
+        function unique(arr){
+        var newarr=[];
+        for(var i=0;i<arr.length;i++){
+                if(newarr.indexOf(arr[i])===-1){
+                    newarr.push(arr[i]);
+                }
+            }
+            return newarr;
+        }
+
+        
+        var demo=unique(['a','b','b','c','d']);
+        console.log(demo);
+        
+
+        //求字符串中某个字符出现的次数及位置
+        var str=['red','blue','red','purple','green','pink','red'];
+        console.log(str.length);
+        var index=str.indexOf('red');
+        var num=0;
+        while(index!=-1){
+            console.log(index);
+            num++;
+            index=str.indexOf('red',index+1);
+        }
+        console.log('出现的次数是'+num);
+        
+
+        //截取字符
+        var str='改革春风吹满地';
+        console.log(str.substr(2,2));
+
+        //替换字符
+        var str='asfae4tgfae';
+        while(str.indexOf('a')!==-1){
+            str=str.replace('a','*');
+        }
+        console.log(str);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

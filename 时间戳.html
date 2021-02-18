@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //计算时间戳的三种方法
+        //时间戳是现在的时间距离1970年的毫秒数。
+        var date=new Date();
+        console.log(date.valueOf());
+        console.log(date.getTime());
+        //简单写法
+        var date1=+new Date();
+        console.log(date1);
+        //H5 新出的最简单的写法
+        console.log(Date.now());
+
+        //倒计时程序
+        function countDown(time){
+            var Nowdate=+new Date();
+            var inputdate=+new Date(time);
+            var time =(inputdate-Nowdate)/1000;
+
+            var d=parseInt(time/60/60/24);//天
+            d=d<10?'0'+d:d;
+            var h=parseInt(time/60/60%24);//时
+            h=h<10?'0'+h:h;
+            var m=parseInt(time/60%24%24);//分
+            m=m<10?'0'+m:m;
+            var s=parseInt(time%60);
+            s=s<10?'0'+s:s;
+            
+            return d+'天'+h+'小时'+m+'分钟'+s+'秒';
+        }
+
+        console.log(countDown('2020-11-19 18:00:00'));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

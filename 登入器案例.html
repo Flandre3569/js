@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .box {
+            position: relative;
+            width: 400px;
+            border-bottom: 1px solid #cccccc;
+            margin:100px auto;
+        }
+        .box input {
+            width: 370px;
+            height: 30px;
+            border: 0;
+            outline: none;
+        }
+        .box img {
+            width: 24px;
+            position: absolute;
+            top: 9px;
+            right: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 输入密码显示密码和隐藏密码的案例 -->
+    <div class="box">
+        <label for="">
+            <img src="闭眼.gif" alt="" id="bi">
+        </label>
+        <input type="password" name="" id="pwd">
+    </div>
+
+    <script>
+        var eye=document.getElementById('bi');
+        var pwd=document.getElementById('pwd');
+
+        var flag=0;
+        
+        eye.onclick=function(){
+            if(flag==0){
+                eye.src='睁眼.gif';
+                pwd.type='text';
+                flag=1;
+            }
+            else{
+                eye.src='闭眼.gif';
+                pwd.type='password';
+                flag=0;
+            }
+        }
+        
+    </script>
+</body>
+</html>
